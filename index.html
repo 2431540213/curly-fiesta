@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from https://github.com/2431540213/curly-fiesta/blob/main/index.html -->
+<!-- saved from https://2431540213.github.io/curly-fiesta/ -->
 <html lang="vi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -195,10 +195,17 @@
           <div>
             <strong style="color: var(--accent-green); font-size: 0.85rem;">Trường hợp 2: Chạy trên 2 Máy tính (Mạng LAN Wifi)</strong>
             <ol>
-              <li>Mở file HTML này trên Máy A và Máy B (cùng nối 1 Wifi/Router LAN). Máy A &amp; B cùng truy cập vào link https://github.com/2431540213/curly-fiesta/main/index.html </li>
+              <li>Mở file HTML này trên Máy A và Máy B (cùng nối 1 Wifi/Router LAN). Máy A &amp; B cùng truy cập vào link <a href="https://2431540213.github.io/curly-fiesta/" style="color: var(--accent-blue);">https://2431540213.github.io/curly-fiesta/</a> (hoặc quét mã QR bên dưới).</li>
               <li>Làm quy trình gửi Signal tương tự như trên qua <b>Zalo/Messenger/Email</b>.</li>
               <li><b>LƯU Ý QUAN TRỌNG:</b> Sau khi bấm "Tạo OFFER", cần <b>chờ 2-3 giây</b> để trình duyệt quét địa chỉ IP LAN (ICE Candidates) trước khi copy gửi đi!</li>
             </ol>
+            <div style="display:flex;align-items:center;gap:1rem;margin-top:0.75rem;padding:0.75rem;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.25);border-radius:8px;flex-wrap:wrap;">
+              <div id="qrBox" style="background:#fff;padding:8px;border-radius:6px;line-height:0;"></div>
+              <div style="font-size:0.8rem;color:var(--text-muted);line-height:1.5;flex:1;min-width:160px;">
+                <b style="color:var(--accent-green);">Quét QR để mở bài lab trên máy B</b><br>
+                <span id="qrLink" style="word-break:break-all;"></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -598,4 +605,18 @@
   </script>
 
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    (function () {
+      var FALLBACK_URL = 'https://2431540213.github.io/curly-fiesta/';
+      var url = /^https?:/.test(location.protocol) ? location.origin + location.pathname : FALLBACK_URL;
+      var link = document.getElementById('qrLink');
+      if (link) link.textContent = url;
+      var box = document.getElementById('qrBox');
+      if (box && window.QRCode) {
+        new QRCode(box, { text: url, width: 120, height: 120, correctLevel: QRCode.CorrectLevel.M });
+      }
+    })();
+  </script>
 </body></html>
